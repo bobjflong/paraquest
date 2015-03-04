@@ -7,13 +7,14 @@ module Paraquest
   describe Request do
     let(:endpoint) { 'http://example.com' }
     let(:params) { { foo: :bar } }
-    let(:then) { [] }
+    let(:then_val) { [] }
     let(:valid_request) do
       Request.new(
+        name: :request1,
         endpoint: endpoint,
         params: params,
         method: :post,
-        then: []
+        then: then_val
       )
     end
 
@@ -25,15 +26,12 @@ module Paraquest
       expect { Request.new }.to raise_error(ArgumentError)
     end
 
-    it 'validates the \'then\' param' do
-      expect do
-        Request.new(
-          endpoint: endpoint,
-          params: params,
-          method: :post,
-          then: :foo
-        )
-      end.to raise_error(ArgumentError, 'requests must be a list')
+    context 'validates the \'then\' param' do
+      let(:then_val) { :foo }
+
+      it do
+        expect { valid_request }.to raise_error(ArgumentError, 'requests must be a list')
+      end
     end
 
     it 'can create a client' do

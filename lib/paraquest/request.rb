@@ -12,6 +12,7 @@ module Paraquest
 
   class RequestValidator
     include Veto.validator
+    validates :name, presence: true
     validates :endpoint, presence: true
     validates :params, presence: true
     validates :method, inclusion: METHODS
@@ -27,7 +28,7 @@ module Paraquest
 
   class Request
 
-    attr_reader :client, :endpoint, :params, :method, :then
+    attr_reader :client, :name, :endpoint, :params, :method, :then
 
     def initialize(opts = {})
       opts.each do |k,v|
