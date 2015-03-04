@@ -5,6 +5,7 @@ PATH
       jruby-httpclient
       rake
       ribimaybe
+      veto
 
 GEM
   remote: https://rubygems.org/
@@ -32,6 +33,7 @@ GEM
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
     ruby-progressbar (1.7.1)
+    veto (1.0.1)
 
 PLATFORMS
   java

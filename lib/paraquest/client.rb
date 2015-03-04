@@ -6,6 +6,8 @@ module Paraquest
       ::HTTP::Client.new(default_host: args.fetch(0))
     elsif first_argument_is_a?(args, Hash)
       ::HTTP::Client.new(args.fetch(0))
+    elsif args.length == 0
+      ::HTTP::Client.new
     else
       raise ArgumentError.new('Arguments to Client must be a String or Hash')
     end

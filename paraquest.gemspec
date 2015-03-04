@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency('rake')
   gem.add_dependency('jruby-httpclient')
   gem.add_dependency('ribimaybe')
+  gem.add_dependency('veto')
   gem.add_development_dependency('rspec', [">= 2.0.0"])
   gem.add_development_dependency('fuubar')
 

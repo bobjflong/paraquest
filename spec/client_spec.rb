@@ -1,6 +1,6 @@
 require 'rspec'
 require 'http_client'
-require File.expand_path("../../lib/paraquest/http_client", __FILE__)
+require File.expand_path("../../lib/paraquest/client", __FILE__)
 
 module Paraquest
   describe do
