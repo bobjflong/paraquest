@@ -4,8 +4,18 @@ require File.expand_path("../../lib/paraquest/http_client", __FILE__)
 
 module Paraquest
   describe do
+    let(:host) { 'http://example.com' }
+
     it do
-      expect(Paraquest::Client('http://google.ie')).to be_a(::HTTP::Client)
+      expect(Paraquest::Client(host)).to be_a(::HTTP::Client)
+    end
+
+    it do
+      expect(Paraquest::Client(default_host: host)).to be_a(HTTP::Client)
+    end
+
+    it 'validates' do
+      expect { Paraquest::Client(Object.new) }.to raise_error(ArgumentError)
     end
   end
 end
