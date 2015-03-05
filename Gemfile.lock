@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    paraquest (0.0.1)
+    paraquest (0.0.1-java)
       jruby-httpclient
       rake
       ribimaybe

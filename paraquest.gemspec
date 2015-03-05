@@ -3,6 +3,7 @@ require File.expand_path("../lib/paraquest/version", __FILE__)
 Gem::Specification.new do |gem|
   gem.name    = 'paraquest'
   gem.version = Paraquest::VERSION
+  gem.platform = 'java'
 
   gem.summary = "Easy request trees"
   gem.description = "Produce dependency trees - execute as network requests"
@@ -22,4 +23,6 @@ Gem::Specification.new do |gem|
 
   # ensure the gem is built out of versioned files
   gem.files = Dir['Rakefile', 'lib/**/*', 'README*', 'LICENSE*'] & `git ls-files -z`.split("\0")
+
+  gem.metadata = {}
 end
