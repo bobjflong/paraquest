@@ -3,7 +3,7 @@ require 'http_client'
 require File.expand_path("../../lib/paraquest/client", __FILE__)
 
 module Paraquest
-  describe do
+  describe 'Client' do
     let(:host) { 'http://example.com' }
 
     it do
